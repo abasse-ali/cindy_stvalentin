@@ -12,18 +12,13 @@
   --color-romantic-red: #ff758c;
 }
 
-html {
-  /* Couleur du haut du dégradé (pink-400) pour le rebond vers le haut */
-  background-color: #f472b6; 
-}
-
-body {
-  /* Couleur du bas du dégradé (red-600) pour le rebond vers le bas */
-  background-color: #dc2626; 
+html, body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  /* Le fond de secours pour éliminer les bords blancs */
+  background-color: #f43f5e; 
   min-height: 100vh;
 }
 
