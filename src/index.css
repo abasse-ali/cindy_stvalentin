@@ -17,9 +17,11 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  /* Le dégradé exact de rose vers rouge */
+  
+  /* Le même dégradé rose -> rouge que ton application Tailwind */
   background: linear-gradient(to bottom right, #f472b6, #f43f5e, #dc2626);
-  background-attachment: fixed; /* Fixe le fond pour qu'il ne se répète pas au scroll */
+  background-attachment: fixed; /* Maintient le dégradé fixe au scroll */
+  
   min-height: 100vh;
 }
 
