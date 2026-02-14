@@ -201,7 +201,7 @@ export function SuccessSection() {
           🎉 Elle a dit Oui ! 🥳🎉
         </h1>
         <p className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl mx-auto drop-shadow-md">
-          C'est officiel ! 💍💕 Voici mon abécédaire de l'amour pour toi mon amour 🥰❤️...
+          C'est officiel ! 💍💕 Voici mon abécédaire de mon amour pour toi ma chèrie 🥰❤️...
         </p>
       </div>
 
