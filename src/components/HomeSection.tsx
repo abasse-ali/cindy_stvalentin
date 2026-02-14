@@ -142,7 +142,7 @@ export function HomeSection({ onSuccess }: HomeSectionProps) {
                 }}
                 className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-8 rounded-full shadow-lg flex items-center gap-2 whitespace-nowrap">
                 {getNoButtonText()}
-                {dodgeCount === 0 && <FrownIcon className="w-6 h-6 ml-2" />}
+                {dodgeCount === 0}
               </button>
             </div>
           )}
