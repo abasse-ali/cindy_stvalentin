@@ -116,42 +116,39 @@ export function HomeSection({ onSuccess }: HomeSectionProps) {
             Oui 😍❤️
           </button>
 
-          {/* FANTÔME PERMANENT */}
+          {/* LE FANTÔME DEVIENT LE CONTENEUR DU BOUTON NON */}
           {!isGone && (
-            <div style={{ width: INITIAL_BTN_WIDTH, height: 60 }} className="flex-shrink-0 relative hidden md:block" />
-          )}
-
-          {/* NO BUTTON */}
-          {!isGone && (
-            <button
-              ref={noBtnRef}
-              onMouseEnter={handleDodge}
-              onClick={handleDodge}
-              onTouchStart={handleDodge}
-              style={{
-                position: 'absolute',
-                left: '50%',
-                marginLeft: '12px',
-                zIndex: 50,
-                transform: isFlyingAway
-                  ? `translate(${offset.x + 300}px, ${offset.y - 500}px) rotate(720deg) scale(0)`
-                  : dodgeCount === 0 
-                    ? 'translate(0, 0)' 
-                    : `translate(calc(-50% - 12px + ${offset.x}px), ${offset.y}px)`,
-                transition: isFlyingAway
-                  ? 'all 0.8s cubic-bezier(0.6, -0.28, 0.74, 0.05)'
-                  : dodgeCount > 0 ? 'transform 0.2s ease-out' : 'none',
-                opacity: isFlyingAway ? 0 : 1,
-                width: 'max-content' 
-              }}
-              className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-8 rounded-full shadow-lg flex items-center gap-2 whitespace-nowrap">
-              {getNoButtonText()}
-              {dodgeCount === 0}
-            </button>
+            <div 
+              style={{ width: INITIAL_BTN_WIDTH, height: 60 }} 
+              className="relative flex-shrink-0 flex items-center justify-center"
+            >
+              <button
+                ref={noBtnRef}
+                onMouseEnter={handleDodge}
+                onClick={handleDodge}
+                onTouchStart={handleDodge}
+                style={{
+                  position: 'absolute',
+                  zIndex: 50,
+                  // On applique l'animation directement ici. Le bouton est "calé" au centre du fantôme.
+                  transform: isFlyingAway
+                    ? `translate(${offset.x + 300}px, ${offset.y - 500}px) rotate(720deg) scale(0)`
+                    : `translate(${offset.x}px, ${offset.y}px)`,
+                  transition: isFlyingAway
+                    ? 'all 0.8s cubic-bezier(0.6, -0.28, 0.74, 0.05)'
+                    : dodgeCount > 0 ? 'transform 0.2s ease-out' : 'none',
+                  opacity: isFlyingAway ? 0 : 1,
+                  width: 'max-content' 
+                }}
+                className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-8 rounded-full shadow-lg flex items-center gap-2 whitespace-nowrap">
+                {getNoButtonText()}
+                {dodgeCount === 0 && <FrownIcon className="w-6 h-6 ml-2" />}
+              </button>
+            </div>
           )}
         </div>
 
-        {/* Message final CORRIGÉ */}
+        {/* Message final */}
         {isGone && (
           <div className="mt-8 animate-fade-in w-full flex justify-center">
             <p className="text-white/90 text-lg md:text-xl font-medium bg-black/20 inline-block px-6 py-3 rounded-full shadow-inner">
