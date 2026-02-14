@@ -11,13 +11,21 @@
   --color-romantic-pink: #ff7eb3;
   --color-romantic-red: #ff758c;
 }
-body {
+
+html, body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  /* Le fond de secours pour éliminer les bords blancs */
+  background-color: #f43f5e; 
+  min-height: 100vh;
 }
+
 h1, h2, h3, .font-romantic {
   font-family: 'Dancing Script', cursive;
 }
+
 /* Floating Hearts Animation */
 @keyframes floatUp {
   0% {
@@ -35,6 +43,7 @@ h1, h2, h3, .font-romantic {
 .animate-float {
   animation: floatUp 15s linear infinite;
 }
+
 /* Heartbeat / Pulse */
 @keyframes heartbeat {
   0% { transform: scale(1); }
@@ -46,6 +55,7 @@ h1, h2, h3, .font-romantic {
 .animate-heartbeat {
   animation: heartbeat 1.5s infinite;
 }
+
 /* Confetti Fall */
 @keyframes confettiFall {
   0% {
@@ -60,6 +70,7 @@ h1, h2, h3, .font-romantic {
 .animate-confetti {
   animation: confettiFall 4s linear forwards;
 }
+
 /* Fade In */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -68,6 +79,7 @@ h1, h2, h3, .font-romantic {
 .animate-fade-in {
   animation: fadeIn 1s ease-out forwards;
 }
+
 /* Custom Scrollbar for the list */
 ::-webkit-scrollbar {
   width: 8px;
