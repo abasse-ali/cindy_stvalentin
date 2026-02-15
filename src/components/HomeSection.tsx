@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { HeartIcon, FrownIcon } from 'lucide-react';
 
 interface HomeSectionProps {
   onSuccess: () => void;
